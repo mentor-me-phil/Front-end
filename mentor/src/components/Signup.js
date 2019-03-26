@@ -13,8 +13,9 @@ class Signup extends Component {
                      <Input 
                         type='username'
                         name='username'
-                        id=""
                         placeholder='usernane'
+                        value=''
+                        onChange=''
                     />
                  </FormGroup>
                  </Col>
@@ -24,8 +25,9 @@ class Signup extends Component {
                         <Input
                             type='password'
                             name='password'
-                            id=''
                             placeholder='password'
+                            value=''
+                            onChange=''
                          />
                     </Formgroup>
                  </Col>
@@ -35,8 +37,9 @@ class Signup extends Component {
                      <Input 
                         type='name'
                         name='name'
-                        id=""
                         placeholder='nane'
+                        value=''
+                        onChange=''
                     />
                  </FormGroup>
                  </Col>
@@ -46,8 +49,9 @@ class Signup extends Component {
                      <Input 
                         type='email'
                         name='email'
-                        id=""
                         placeholder='email'
+                        value=''
+                        onChange=''
                     />
                  </FormGroup>
                  </Col>
@@ -57,8 +61,9 @@ class Signup extends Component {
                      <Input 
                         type='role'
                         name='role'
-                        id=""
                         placeholder='role'
+                        value=''
+                        onChange=''
                     />
                  </FormGroup>
                  </Col>

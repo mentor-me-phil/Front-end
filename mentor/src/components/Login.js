@@ -13,8 +13,9 @@ class Login extends Component {
                      <Input 
                         type='username'
                         name='username'
-                        id=""
                         placeholder='usernane'
+                        value=''
+                        onChange=''
                     />
                  </FormGroup>
                  </Col>
@@ -24,8 +25,9 @@ class Login extends Component {
                         <Input
                             type='password'
                             name='password'
-                            id=''
                             placeholder='password'
+                            value=''
+                            onChange=''
                          />
                     </Formgroup>
                  </Col>
