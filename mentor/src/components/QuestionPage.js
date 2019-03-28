@@ -26,11 +26,4 @@ class Questions extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return{
-     addingSmurf: state.addingSmurf
-    }
-  }
-  export default connect(mapStateToProps, {addSmurf})(SmurfForm)
-
 export default Questions;

@@ -59,6 +59,5 @@ const mapStateToProps = ({ error, loggingIn}) => ({
     error,
     loggingIn
 })
-  export default connect(mapStateToProps, {handleSubmit})(Login)
 
-export default Login;
+export default connect(mapStateToProps, {handleSubmit})(Login)
