@@ -7,7 +7,7 @@ import {
   Label,
   Input,
   Button
-} from "reactstrap";
+} from "react-strap";
 
 class Signup extends Component {
   state = {
@@ -28,6 +28,7 @@ class Signup extends Component {
   handleSubmit = e => {
     console.log(this.state);
     e.preventDefault();
+    this.props.register
   };
 
   render() {

@@ -32,184 +32,188 @@ import {
   } from "../actions";
   
   const initialState = {
-    mentore: [],
-    loggingIn: false,
-    error: "",
-    token: localStorage.setItem("token")
+    mentors: [],
+    fetchingData: false,
+    adding: false,
+    deleting: false,
+    updating: false,
+    error: '',
+    token: ''
   };
   
-  const authReducer = (state = initialState, action) => {
+  const questionReducer = (state = initialState, action) => {
     switch (action.type) {
       case GET_QUESTIONS_START:
         return {
           ...state,
-          loggingIn: true
+          fetchingData: true
         };
       case GET_QUESTIONS_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           token: action.payload
         };
       case GET_QUESTIONS_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           error: action.payload
         };
       case GET_ANSWERS_START:
         return {
           ...state,
-          loggingIn: true
+          fetchingData: true
         };
       case GET_ANSWERS_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           token: action.payload
         };
       case GET_ANSWERS_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           error: action.payload
         };
       case GET_QID_START:
         return {
           ...state,
-          loggingIn: true
+          fetchingData: true
         };
       case GET_QID_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           token: action.payload
         };
       case GET_QID_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           error: action.payload
         };
       case ADD_POST_START:
         return {
           ...state,
-          loggingIn: true
+          adding: true
         };
       case ADD_POST_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          adding: false,
           token: action.payload
         };
       case ADD_POST_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          adding: false,
           error: action.payload
         };
       case ADD_ANSWERS_START:
         return {
           ...state,
-          loggingIn: true
+          adding: true
         };
       case ADD_ANSWERS_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          adding: false,
           token: action.payload
         };
       case ADD_ANSWERS_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          adding: false,
           error: action.payload
         };
       case GET_POSTS_START:
         return {
           ...state,
-          loggingIn: true
+          fetchingData: true
         };
       case GET_POSTS_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           token: action.payload
         };
       case GET_POSTS_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           error: action.payload
         };
       case PATCH_ID_START:
         return {
           ...state,
-          loggingIn: true
+          updating: true
         };
       case PATCH_ID_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          updating: false,
           token: action.payload
         };
       case PATCH_ID_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          updating: false,
           error: action.payload
         };
       case GET_CONVO_START:
         return {
           ...state,
-          loggingIn: true
+          fetchingData: true
         };
       case GET_CONVO_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           token: action.payload
         };
       case GET_CONVO_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           error: action.payload
         };
       case GET_CID_START:
         return {
           ...state,
-          loggingIn: true
+          fetchingData: true
         };
       case GET_CID_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           token: action.payload
         };
       case GET_CID_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          fetchingData: false,
           error: action.payload
         };
       case DELETE_POST_START:
         return {
           ...state,
-          loggingIn: true
+          deleting: true
         };
       case DELETE_POST_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          deleting: false,
           token: action.payload
         };
       case DELETE_POST_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          deleting: false,
           error: action.payload
         };
     }
   };
   
+  export default questionReducer;

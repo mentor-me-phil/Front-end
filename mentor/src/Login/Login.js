@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Col, Form, FormGroup, Label, Input, Button } from 'react-strap';
 
 class Login extends Component {
     state = {
@@ -48,7 +48,7 @@ class Login extends Component {
                          />
                     </Formgroup>
                  </Col>
-                  <Button>Submit</Button>
+                  <Button onClick={this.login}>Submit</Button>
                 </Form>
             </Container>
         )
