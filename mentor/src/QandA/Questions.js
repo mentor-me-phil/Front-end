@@ -1,11 +1,28 @@
 import React from 'react';
+import { getQuestions } from '../actions';
+import { connect } from 'react-redux';
 
-const Questions = props => {
-    return (
-        <div>
-            <p>{props.question}</p>
-        </div>
-    )
+class Questions extends React.Component {
+    
+    componentDidMount() {
+        this.props.getQuestions();
+    }
+    
+    render() { 
+        return ( 
+            <div className='questions-list'>
+            {this.props.questions.map(question => 
+                <div key={question.id}>
+                    <h2>Questions: {this.state.question}</h2>
+                </div>
+                )}  
+            </div>
+         );
+    }
 }
 
-export default Questions;
+const mapStateToProps = ({ questions }) => ({
+    questions: this.state.questions,
+ })
+
+ export default connect(mapStateToProps, {getQuestions})(Questions)

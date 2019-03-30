@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import {  Form, Input } from 'reactstrap';
+import React from 'react';
+import { Form, Input } from 'reactstrap';
+import { getAnswers } from '../actions';
+import Answers from './Answers';
+import Questions from './Questions';
+import { connect } from 'react-redux';
 
-class Questions extends Component {
+class QuestionPage extends React.Component {
     state = {
-        questions: '',
-        ansswers: ''
+        questions: [],
+        answers: []
     }
 
     handleSubmit = e => {
@@ -16,7 +20,7 @@ class Questions extends Component {
 
     getAnswers = e => {
         e.preventDefault();
-        this.props.getAnswers
+        this.props.getAnswers();
     }
 
     render() {
@@ -24,13 +28,20 @@ class Questions extends Component {
             <Form>
                 <div>
                     <h2>Questions</h2>
-                    {this.props.questions.map((question, i) => <Questions key={i} />)}
+                    {/* {this.props.question.map((question, i) => <Questions key={i} question={question} />)} */}
                     <Input type='text' placeholder='Questions here...' />
-                    <Answers />
+                    {/* {this.props.answers.map((answer, i) => <Answers key={i} answer={answer} /> )} */}
                 </div>
             </Form>
         )
     }
 }
 
-export default Questions;
+
+const mapStateToProps = state => ({
+   questions: state.questions,
+   answers: state.answers
+})
+ 
+
+export default connect(mapStateToProps, {getAnswers})(QuestionPage)

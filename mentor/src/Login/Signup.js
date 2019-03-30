@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import {
   Container,
   Col,
@@ -7,66 +8,74 @@ import {
   Label,
   Input,
   Button
-} from "react-strap";
+} from "reactstrap";
+
+import { register } from '../actions';
 
 class Signup extends Component {
   state = {
-    username: "",
-    password: "",
-    name: "",
-    email: "",
-    role: ""
+    newUser: {
+      username: "",
+      password: "",
+      name: "",
+      email: "",
+      role: ""
+   
+    }
   };
 
   handleChange = e => {
     console.log(e);
     this.setState({
-      [e.target.name]: e.target.value
+      newUser: {
+        ...this.state.newUser,
+        [e.target.name]: e.target.value
+      }
     });
   };
 
-  handleSubmit = e => {
+  register = e => {
     console.log(this.state);
     e.preventDefault();
-    this.props.register
+    this.props.register(this.state.newUser);
   };
 
   render() {
     return (
       <Container className="login">
         <h2>Sign Up</h2>
-        <Form className="form">
+        <Form className="form" onSubmit={this.register}>
           <Col>
             <FormGroup>
-              <Label>Username</Label>
+              <Label>Userame</Label>
               <Input
                 type="username"
                 name="username"
-                placeholder="usernane"
+                placeholder="username"
                 value={this.state.username}
                 onChange={this.handleChange}
               />
             </FormGroup>
           </Col>
           <Col>
-            <Formgroup>
+            <FormGroup>
               <Label for="password">Password</Label>
               <Input
                 type="password"
                 name="password"
                 placeholder="password"
                 value={this.state.password}
-                onChange={this.handleChnage}
+                onChange={this.handleChange}
               />
-            </Formgroup>
+            </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label>Name</Label>
+              <Label>Fullname</Label>
               <Input
                 type="name"
                 name="name"
-                placeholder="nane"
+                placeholder="fullname"
                 value={this.state.name}
                 onChange={this.handleChange}
               />
@@ -103,4 +112,8 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+const mapStateToProps =  state => ({
+  
+})
+
+export default connect(mapStateToProps, {register})(Signup)

@@ -22,6 +22,7 @@ import {
   const initialState = {
     mentor: [],
     loggingIn: false,
+    deleting: "",
     error: "",
     fetchingUser: false,
     fetchingId: false,
@@ -101,37 +102,38 @@ import {
       case PATCH_START:
         return {
           ...state,
-          loggingIn: true
+          updating: true
         };
       case PATCH_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          updating: false,
           token: action.payload
         };
       case PATCH_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          updating: false,
           error: action.payload
         };
       case DELETE_USER_START:
         return {
           ...state,
-          loggingIn: true
+          deleting: true
         };
       case DELETE_USER_SUCCESS:
         return {
           ...state,
-          loggingIn: false,
+          deleting: false,
           token: action.payload
         };
       case DELETE_USER_FAIL:
         return {
           ...state,
-          loggingIn: false,
+          deleting: false,
           error: action.payload
         };
+        default: return state;
     }
   };
   

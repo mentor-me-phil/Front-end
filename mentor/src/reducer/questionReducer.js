@@ -32,7 +32,8 @@ import {
   } from "../actions";
   
   const initialState = {
-    mentors: [],
+    questions: [],
+    answers: [],
     fetchingData: false,
     adding: false,
     deleting: false,
@@ -199,12 +200,12 @@ import {
       case DELETE_POST_START:
         return {
           ...state,
-          deleting: true
+          deleting: false
         };
       case DELETE_POST_SUCCESS:
         return {
           ...state,
-          deleting: false,
+          deleting: true,
           token: action.payload
         };
       case DELETE_POST_FAIL:
@@ -213,6 +214,7 @@ import {
           deleting: false,
           error: action.payload
         };
+        default: return state;
     }
   };
   
