@@ -10,9 +10,6 @@ class QuestionPage extends React.Component {
         questions: [],
         answers: []
     }
-    state = {
-        questions: ''
-    }
 
     handleSubmit = e => {
         this.setState({
@@ -21,7 +18,10 @@ class QuestionPage extends React.Component {
         })
     }
     
-
+    getQuestions = e => {
+        e.preventDefault();
+        this.props.getQuestions();
+    }
 
     getAnswers = e => {
         e.preventDefault();
@@ -33,9 +33,13 @@ class QuestionPage extends React.Component {
             <Form>
                 <div>
                     <h2>Questions</h2>
-                    <Input type='text' placeholder='Questions here...' />
                     <Questions getQuestions={this.getQuestions} />
                     <Answers getAnswers={this.getAnswers} />
+                    <Input 
+                        type='text' 
+                        value={this.state.questions}
+                        onChange=''
+                        placeholder='Questions here...' />
                 </div>
             </Form>
         )
