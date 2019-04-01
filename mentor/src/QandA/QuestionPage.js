@@ -10,6 +10,9 @@ class QuestionPage extends React.Component {
         questions: [],
         answers: []
     }
+    state = {
+        questions: ''
+    }
 
     handleSubmit = e => {
         this.setState({
@@ -17,6 +20,7 @@ class QuestionPage extends React.Component {
             answers: e.target.value
         })
     }
+    
 
     getAnswers = e => {
         e.preventDefault();
@@ -28,9 +32,8 @@ class QuestionPage extends React.Component {
             <Form>
                 <div>
                     <h2>Questions</h2>
-                    {/* {this.props.question.map((question, i) => <Questions key={i} question={question} />)} */}
                     <Input type='text' placeholder='Questions here...' />
-                    {/* {this.props.answers.map((answer, i) => <Answers key={i} answer={answer} /> )} */}
+                    <Questions getQuestions={this.getQuestions} />
                 </div>
             </Form>
         )

@@ -25,6 +25,7 @@ class Login extends Component {
         console.log(this.state)
         e.preventDefault();
         this.props.login(this.state.user);
+        // this.props.history.push()
     }
     render() {
         return (
@@ -37,7 +38,7 @@ class Login extends Component {
                      <Input 
                         type='username'
                         name='username'
-                        placeholder='usernane'
+                        placeholder='username'
                         value={this.state.username}
                         onChange={this.handleChange}
                     />

@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Profile from './Profile';
 
-const Home = () => {
-    return (
-        <div className='home'>
-         <h2>Mentor</h2>
-         {props.profiles.map(profile => <Profile key={} /> )}
-        </div>
-    )
+class Mentors extends Component {
+    render() {
+        return (
+            <div className='home'>
+            <h2>Mentors</h2>
+            <ul>
+                {this.props.profiles.map(profile => {
+                return (
+                <Profile 
+                    name={profile.name}
+                    description={profile.description}
+                /> 
+                );
+            })}
+            </ul>
+            </div>
+        )
+    }
 }
+
+export default Profile;

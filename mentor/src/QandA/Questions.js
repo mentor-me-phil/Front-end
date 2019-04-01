@@ -1,10 +1,18 @@
 import React from 'react';
 import { getQuestions } from '../actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Questions extends React.Component {
-    
+    state = {
+        questions: ''
+    }
     componentDidMount() {
+        this.props.getQuestions();
+    }
+
+    getQuestions = e => {
+        e.preventDefault();
         this.props.getQuestions();
     }
     
@@ -16,6 +24,9 @@ class Questions extends React.Component {
                     <h2>Questions: {this.state.question}</h2>
                 </div>
                 )}  
+                <Link>
+                    Edit
+                </Link>
             </div>
          );
     }
