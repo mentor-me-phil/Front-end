@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input } from 'reactstrap';
+import { Form, Input } from 'react-strap';
 import { getAnswers } from '../actions';
 import Answers from './Answers';
 import Questions from './Questions';
@@ -22,6 +22,7 @@ class QuestionPage extends React.Component {
     }
     
 
+
     getAnswers = e => {
         e.preventDefault();
         this.props.getAnswers();
@@ -34,6 +35,7 @@ class QuestionPage extends React.Component {
                     <h2>Questions</h2>
                     <Input type='text' placeholder='Questions here...' />
                     <Questions getQuestions={this.getQuestions} />
+                    <Answers getAnswers={this.getAnswers} />
                 </div>
             </Form>
         )

@@ -15,11 +15,14 @@ const Navigation = props => {
          </DropdownToggle>
          <DropDownMenu right>
             <DropDownItem>
-             <a href='#'>Questions</a>
+             <a href='/questions'>Questions</a>
             </DropDownItem>
             <DropDownItem>
-              <a href='#'>Users</a>  
-            </DropDownItem> 
+              <a href='/home'>Home</a>  
+            </DropDownItem>
+            <DropDownItem>
+              <a href='/profile'>Mentors</a>
+            </DropDownItem>
          </DropDownMenu>
         </UncontrolledDropdown>
       </NavBar>

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Profile from './Profile';
+import Navigation from './Navigation';
+import QuestionPage from './Profile';
 
 class Mentors extends Component {
     render() {
         return (
             <div className='home'>
+            <Navigation />
             <h2>Mentors</h2>
             <ul>
                 {this.props.profiles.map(profile => {
@@ -16,6 +19,7 @@ class Mentors extends Component {
                 );
             })}
             </ul>
+            <QuestionPage />
             </div>
         )
     }

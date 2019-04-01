@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'reactstrap';
+import { Form } from 'react-strap';
 
 class Answers extends React.Component {
     state = {
@@ -14,16 +14,20 @@ class Answers extends React.Component {
         e.preventDefault();
         this.props.addAnswers();
     }
+    
 
     render() {
         return(
-        <Form onSubmit={this.addAnswers}>
-            <input
-            type='text'
-            name='answers'
-            placeholder='Add answer here'
-            />
-        </Form>
+         <div className='answer'>
+            <h3>Answers</h3>
+            <Form onSubmit={this.addAnswers}>
+                <input
+                type='text'
+                name='answers'
+                placeholder='Add answer here'
+                />
+            </Form>
+        </div>
         )
     }
 }

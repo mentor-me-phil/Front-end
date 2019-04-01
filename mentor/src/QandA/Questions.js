@@ -15,6 +15,11 @@ class Questions extends React.Component {
         e.preventDefault();
         this.props.getQuestions();
     }
+
+    deletePost = e => {
+        e.preventDefault();
+        this.props.deletePost();
+    }
     
     render() { 
         return ( 
@@ -24,9 +29,7 @@ class Questions extends React.Component {
                     <h2>Questions: {this.state.question}</h2>
                 </div>
                 )}  
-                <Link>
-                    Edit
-                </Link>
+                <p onClick={this.deletePost}>Delete</p>
             </div>
          );
     }
