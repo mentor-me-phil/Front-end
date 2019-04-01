@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, NavItem, UncontrolledDropdown, DropdownToggle, DropDownMenu, DropDownItem } from 'react-strap';
+import { NavBar, NavItem, UncontrolledDropdown, DropdownToggle, DropDownMenu, DropDownItem } from 'reactstrap';
 
 const Navigation = props => {
     return (

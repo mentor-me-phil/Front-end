@@ -33,16 +33,21 @@ class QuestionPage extends React.Component {
         this.props.addAnswers();
     }
 
+    deletePost = e => {
+        e.preventDefault();
+        this.props.deletePost();
+    }
+
     render() {
         return (
             <Form>
                 <div>
                     <h2>Questions</h2>
-                    <Questions getQuestions={this.getQuestions} />
-                    <Answers getAnswers={this.getAnswers} />
+                    <Questions />
+                    <Answers />
                     <Input 
                         type='text' 
-                        value={this.state.questions}
+                        value={this.state.answers}
                         onChange={this.addAnswers}
                         placeholder='Answers here...' />
                 </div>
