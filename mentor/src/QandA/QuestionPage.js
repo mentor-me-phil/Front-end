@@ -43,12 +43,16 @@ class QuestionPage extends React.Component {
             <Form>
                 <div>
                     <h2>Questions</h2>
-                    <Questions />
-                    <Answers />
+                    {this.state.questions.map(() => {
+                       return  <Questions />
+                    })}
+                    {this.state.answers.map(() => {
+                       return  <Answers />
+                    })}
                     <Input 
                         type='text' 
                         value={this.state.answers}
-                        onChange={this.addAnswers}
+                        onChange={this.handleSubmit}
                         placeholder='Answers here...' />
                 </div>
             </Form>
