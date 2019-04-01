@@ -28,6 +28,11 @@ class QuestionPage extends React.Component {
         this.props.getAnswers();
     }
 
+    addAnswers = e => {
+        e.preventDefault();
+        this.props.addAnswers();
+    }
+
     render() {
         return (
             <Form>
@@ -38,8 +43,8 @@ class QuestionPage extends React.Component {
                     <Input 
                         type='text' 
                         value={this.state.questions}
-                        onChange=''
-                        placeholder='Questions here...' />
+                        onChange={this.addAnswers}
+                        placeholder='Answers here...' />
                 </div>
             </Form>
         )

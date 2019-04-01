@@ -1,7 +1,7 @@
 import React from 'react';
 import { getQuestions } from '../actions';
 import { connect } from 'react-redux';
-import { Button } from 'reactstrap';
+import { Button } from 'react-strap';
 
 class Questions extends React.Component {
     state = {
@@ -29,7 +29,7 @@ class Questions extends React.Component {
                     <h2>Questions: {this.state.question}</h2>
                 </div>
                 )}  
-                <button onClick={this.deletePost}>Delete</button>
+                <Button onClick={this.deletePost}>Delete</Button>
             </div>
          );
     }
